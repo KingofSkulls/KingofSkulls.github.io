@@ -271,6 +271,25 @@
 
             position: absolute;
         }
+		.triangle-up {
+            width: 0;
+            height: 0;
+            border-left: 21px solid transparent;
+            border-right: 21px solid transparent;
+            border-bottom: 42px solid rgba(0, 0, 0, 1);
+
+            position: absolute;
+        }
+
+        .triangle-up-outline {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 50px solid #B4B9BD;
+
+            position: absolute;
+        }
     </style>
 </head>
 <html>
@@ -281,10 +300,10 @@
     <div style="position:fixed;width:100%;z-index:1; top:0; background-color: #000000;">
         <div style="width:100%;overflow:hidden;display:inline-block;width:100%" id="navbar">
             <a href="#home" class="navbar-item">HOME</a>
-			<a href="#gourmetgauntlet" class="navbar-item" onclick="enableVisible(document.getElementById('gourmetgauntlet-body'))">GOURMET GAUNTLET</a>
-            <a href="#rootrampage" class="navbar-item" onclick="enableVisible(document.getElementById('root-rampage-body'))">ROOT RAMPAGE</a>
-            <a href="#zombonk" class="navbar-item" onclick="enableVisible(document.getElementById('zombonk-body'))">ZOMBONK</a>
-            <a href="#quickswapcaverns" class="navbar-item" onclick="enableVisible(document.getElementById('quick-swap-caverns-body'))">QUICK SWAP CAVERNS</a>
+			<a href="#gourmetgauntlet" class="navbar-item" onclick="toggleVisibleByClass('gourmet-gauntlet-body')">GOURMET GAUNTLET</a>
+            <a href="#rootrampage" class="navbar-item" onclick="toggleVisibleByClass('root-rampage-body')">ROOT RAMPAGE</a>
+            <a href="#zombonk" class="navbar-item" onclick="toggleVisibleByClass('zombonk-body')">ZOMBONK</a>
+            <a href="#quickswapcaverns" class="navbar-item" onclick="toggleVisibleByClass('quick-swap-caverns-body')">QUICK SWAP CAVERNS</a>
             
 
             <a href="Files/Noah Dean Resume.pdf" target="_blank" class="navbar-item"
@@ -329,7 +348,7 @@
     <!-- Beginning of Gourmet Gauntlet -->
     <div class="body-border" id="gourmetgauntlet">
         <div class="body-inner-border">
-            <div class="image-header" style="background-image: url(Files/GG.png);" onclick="toggleVisible(document.getElementById('gourmetgauntlet-body'))">
+            <div class="image-header" style="background-image: url(Files/GG.png);" onclick="toggleVisibleByClass('gourmet-gauntlet-body')">
                 <div class="row">
                     <div class="text-column header-overlay-column">
                         <div class="image-overlay-color">
@@ -349,10 +368,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="triangle-down-outline" style="right: 10px; bottom: 10px"></div>
-                <div class="triangle-down" style="right: 14px; bottom: 15px"></div>
+                <div class="triangle-down-outline gourmet-gauntlet-body" style="right: 10px; bottom: 10px"></div>
+                <div class="triangle-down gourmet-gauntlet-body" style="right: 14px; bottom: 15px"></div>
+				<div class="triangle-up-outline gourmet-gauntlet-body" style="right: 10px; bottom: 12px; display: none;"></div>
+				<div class="triangle-up gourmet-gauntlet-body" style="right: 14px; bottom: 15px; display: none;"></div>
             </div>
-            <div class="body-container dropdown" id="gourmetgauntlet-body" style="display:none;">
+            <div class="body-container dropdown gourmet-gauntlet-body" style="display:none;">
                 <!--<h1 class="center">ABOUT ME</h1>-->
                 <p class="center">Gourmet Gauntlet is a twin-stick, top-down, bullet hell shooter which is currently being developed for my senior project.
 				It was inspired by Root Rampage which was a project I developed for a game jam. In Gourmet Gauntlet you play as a chef who created a recipe to create sentient food.
@@ -416,7 +437,7 @@
     <!-- Beginning of Root Rampage -->
     <div class="body-border" id="rootrampage">
         <div class="body-inner-border">
-            <div class="image-header" style="background-image: url(Files/RR.png);" onclick="toggleVisible(document.getElementById('root-rampage-body'))">
+            <div class="image-header" style="background-image: url(Files/RR.png);" onclick="toggleVisibleByClass('root-rampage-body')">
                 <div class="row">
                     <div class="text-column header-overlay-column">
                         <div class="image-overlay-color">
@@ -436,10 +457,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="triangle-down-outline" style="right: 10px; bottom: 10px"></div>
-                <div class="triangle-down" style="right: 14px; bottom: 15px"></div>
+                <div class="triangle-down-outline root-rampage-body" style="right: 10px; bottom: 10px"></div>
+                <div class="triangle-down root-rampage-body" style="right: 14px; bottom: 15px"></div>
+				<div class="triangle-up-outline root-rampage-body" style="right: 10px; bottom: 12px; display: none;"></div>
+				<div class="triangle-up root-rampage-body" style="right: 14px; bottom: 15px; display: none;"></div>
             </div>
-            <div class="body-container dropdown" id="root-rampage-body" style="display: none;">
+            <div class="body-container dropdown root-rampage-body" style="display: none;">
                 <!--<h1 class="center">ABOUT ME</h1>-->
                 <p class="center">
                     Root Rampage is a twin-stick, top-down, bullet hell shooter which was created for the
@@ -504,7 +527,7 @@
     <!-- Beginning of Zombonk -->
     <div class="body-border" id="zombonk">
         <div class="body-inner-border">
-            <div class="image-header" style="background-image: url(Files/ZombonkHeader.png);" onclick="toggleVisible(document.getElementById('zombonk-body'))">
+            <div class="image-header" style="background-image: url(Files/ZombonkHeader.png);" onclick="toggleVisibleByClass('zombonk-body')">
                 <div class="row">
                     <div class="text-column header-overlay-column">
                         <div class="image-overlay-color">
@@ -525,11 +548,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="triangle-down-outline" style="right: 10px; bottom: 10px"></div>
-                <div class="triangle-down" style="right: 14px; bottom: 15px"></div>
+                <div class="triangle-down-outline zombonk-body" style="right: 10px; bottom: 10px"></div>
+                <div class="triangle-down zombonk-body" style="right: 14px; bottom: 15px"></div>
+				<div class="triangle-up-outline zombonk-body" style="right: 10px; bottom: 12px; display: none;"></div>
+				<div class="triangle-up zombonk-body" style="right: 14px; bottom: 15px; display: none;"></div>
             </div>
 
-            <div class="body-container dropdown" id="zombonk-body" style="display: none;">
+            <div class="body-container dropdown zombonk-body" style="display: none;">
                 <!--<h1 class="center">ABOUT ME</h1>-->
                 <p class="center">ZomBonk is a survival horror game created in 72 hours game jam for the Ludum Dare 50,
                     the theme of which was "Delay the Inevitable". In ZomBonk, you are trapped in a maze that doubles as a graveyard. 
@@ -593,7 +618,7 @@
     <!-- Beginning of Quick Swap Caverns -->
     <div class="body-border" id="quickswapcaverns">
         <div class="body-inner-border">
-            <div class="image-header" style="background-image: url(Files/QSC.png);" onclick="toggleVisible(document.getElementById('quick-swap-caverns-body'))">
+            <div class="image-header" style="background-image: url(Files/QSC.png);" onclick="toggleVisibleByClass('quick-swap-caverns-body')">
                 <div class="row">
                     <div class="text-column header-overlay-column">
                         <div class="image-overlay-color">
@@ -611,10 +636,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="triangle-down-outline" style="right: 10px; bottom: 10px"></div>
-                <div class="triangle-down" style="right: 14px; bottom: 15px"></div>
+                <div class="triangle-down-outline quick-swap-caverns-body" style="right: 10px; bottom: 10px"></div>
+                <div class="triangle-down quick-swap-caverns-body" style="right: 14px; bottom: 15px"></div>
+				<div class="triangle-up-outline quick-swap-caverns-body" style="right: 10px; bottom: 12px; display: none;"></div>
+				<div class="triangle-up quick-swap-caverns-body" style="right: 14px; bottom: 15px; display: none;"></div>
             </div>
-            <div class="body-container dropdown" id="quick-swap-caverns-body" style="display: none;">
+            <div class="body-container dropdown quick-swap-caverns-body" style="display: none;">
                 <!--<h1 class="center">ABOUT ME</h1>-->
                 <p class="center">Quick Swap Caverns is a hack and slash game made for the Global Game Jam 2021, which
                     had the theme "Lost & Found." The games gimmick was that every you killed an enemy you would lose your current weapon and get a new one from the enemy you killed.
@@ -705,6 +732,12 @@
                 x.style.display = "none";
             }
         }
+		function toggleVisibleByClass(className) {
+			var elements = document.getElementsByClassName(className);
+			for (var i = 0; i < elements.length; i++) {
+				elements[i].style.display = (elements[i].style.display === 'none') ? 'block' : 'none';
+			}
+		}
 
         function enableVisible(x)
         {
