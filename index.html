@@ -116,6 +116,10 @@
             flex: 50%;
             padding: 10px;
         }
+		body {
+            padding-top: 45px; /* Adjust the padding value based on the height of your navbar */
+            margin: 0;
+        }
 
         .body-border {
             background-color: #003561;
@@ -144,11 +148,14 @@
 		}
 		
 		.me {
-			flex: 0 0 80%;
-			max-width: 20%;
+			flex: 0 0 30%;
+			max-width: 100%;
+			height: 350px; /* Set a fixed height for the image */
 			margin: 20px;
-			margin-left: 0px;
-			
+			margin-left: 0;
+			object-fit: cover;
+			width: 100%;
+			object-position: top; /* Crop from the top */
 		}
 
         .fullwidth-image {
@@ -661,9 +668,6 @@
     <div class="body-border">
         <div class="body-inner-border">
             <div class="body-container">
-                <p style="font-size: 14px;">Built off of W3 School's <a
-                    href="https://www.w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_parallax&stacked=v">parallax
-                    template</a></p>
                 <p style="font-size: 14px;">Copyright 2023 Noah Dean</p>
             </div>
         </div>
